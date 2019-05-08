@@ -20,7 +20,7 @@ namespace ODataDemo.ODataQuery
                             .Count() // Allow for the $count Command
                             .Expand() // Allow for the $expand Command
                             .OrderBy() // Allow for the $orderby Command
-                            .Page() // Allow for the $top and $skip Commands
+                            .Page(100, 100) // Allow for the $top and $skip Commands
                             .Select();// Allow for the $select Command; 
 
             builder.EntitySet<Author>(nameof(Author))
@@ -29,7 +29,7 @@ namespace ODataDemo.ODataQuery
                             .Count() // Allow for the $count Command
                             .Expand() // Allow for the $expand Command
                             .OrderBy() // Allow for the $orderby Command
-                            .Page() // Allow for the $top and $skip Commands
+                            .Page(100, 100) // Allow for the $top and $skip Commands
                             .Select() // Allow for the $select Command
                             .ContainsMany(x => x.Books)
                             .Expand();
@@ -40,7 +40,7 @@ namespace ODataDemo.ODataQuery
                             .Count() // Allow for the $count Command
                             .Expand() // Allow for the $expand Command
                             .OrderBy() // Allow for the $orderby Command
-                            .Page() // Allow for the $top and $skip Commands
+                            .Page(100, 100) // Allow for the $top and $skip Commands
                             .Select() // Allow for the $select Command
                             .HasMany(x => x.Books)
                             .Expand();
